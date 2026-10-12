@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: exam-management-backend
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb+srv://mulukuntlamanojkumar_db_user:manoj123@cluster0.rzmpfl0.mongodb.net/exam_management?retryWrites=true&w=majority&appName=Cluster0}
+      auto-index-creation: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+    expiration-ms: ${JWT_EXPIRATION:86400000}
+  seed-data: true
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173}
+
+logging:
+  level:
+    root: INFO
+    com.exammanagement: DEBUG
+    org.springframework.data.mongodb: INFO
