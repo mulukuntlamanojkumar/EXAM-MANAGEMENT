@@ -8,7 +8,7 @@ spring:
     name: exam-management-backend
   data:
     mongodb:
-      uri: ${MONGODB_URI:mongodb+srv://mulukuntlamanojkumar_db_user:manoj123@cluster0.rzmpfl0.mongodb.net/exam_management?retryWrites=true&w=majority&appName=Cluster0}
+      uri: ${MONGODB_URI:mongodb://localhost:27017/exam_management}
       auto-index-creation: true
   servlet:
     multipart:
@@ -21,7 +21,7 @@ app:
     expiration-ms: ${JWT_EXPIRATION:86400000}
   seed-data: true
   cors:
-    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173}
+    allowed-origins: ${CORS_ORIGINS:https://exam-management-flame.vercel.app,http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173}
 
 logging:
   level:
